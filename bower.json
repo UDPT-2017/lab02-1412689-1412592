@@ -1,0 +1,21 @@
+{
+  "name": "my-intro",
+  "description": "**Name of your app** là một bài tập 2 tại môn UDPT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.",
+  "main": "index.js",
+  "authors": [
+    "quynhosuperkid <hoangthibichvan95@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/UDPT-2017/lab02-1412689-1412592",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

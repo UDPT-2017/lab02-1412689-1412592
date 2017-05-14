@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/maincss.css">
+    <link rel="stylesheet" type="text/css" href="css/leftMenucss.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+
+    <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      margin: auto;
+  }
+  </style>
+
+  </head>
+  <body>
+
+
+      <!-- sidebar-wrapper -->
+          <!-- /#sidebar-wrapper -->
+
+      <!-- page-content-wrapper -->
+        <div class="container-fluid">
+          <div class="row">
+            <!-- header -->
+            <header>
+              <!-- Into bar with login & search -->
+              <div class="intro">
+                <h1 style="margin-top:auto">My message</h1>
+              </div>
+              <!-- /Into bar with login & search -->
+
+              <!-- Show/Hide Menu Button & Nav Bar -->
+
+                <!-- Navigation -->
+                <div class="nav" >
+                    <nav class="navbar navbar-inverse">
+                      <div class="container-fluid">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                          </button>
+                          
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                          <ul class="nav navbar-nav">
+                            <li class="{{#if active.home}}active{{/if}} home"><a href="/">Home</a></li>
+                            <li class="{{#if active.messages}}active{{/if}} messages"><a href="messages">Messages</a></li>
+                            <li class="{{#if active.users}}active{{/if}} users"><a href="users">Users</a></li>
+                            <li class="{{#if active.about}}active{{/if}} about"><a href="about">About</a></li>
+                            
+                          </ul>
+                              
+                          {{#if user}}
+                            <h1> Xin chào, {{user.fullname}} !!! </h1>
+                            <br>
+                            <li>
+                                    <a href="/mailbox" class="btn btn-default btn-lg"><i class="fa fa-inbox fa-fw"></i> <span class="network-name">Mailbox</span></a>
+                                </li>
+                            <li>
+                                    <a href="/logout" class="btn btn-default btn-lg"><i class="fa fa-sign-in fa-fw"></i> <span class="network-name">Logout</span></a>
+                                </li>
+                            {{else}}
+                                <ul class="nav navbar-nav navbar-right">
+                                  <li><a href="/signup" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Đăng Ký</a></li>
+                                  <li><a href="/login" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+                                </ul>
+                            {{/if}}
+
+                        </div>
+
+                      </div>
+                    </nav>
+              </div>
+              <!-- /Navigation -->
+
+            </header>
+            <!-- /#header -->
+
+            <!-- content -->
+            
+            <div class="container">
+            <h1>{{message}}</h1>
+              <div class="row">
+                {{{body}}}
+              </div>
+
+            </div>
+            <!-- /#content -->
+
+            <!-- footer -->
+            <footer class="container-fluid bg-4 text-center">
+              <p>
+                1412592 - Võ Hiếu Trung<br>
+                vhieutrung@outlook.com - 0911101120
+              </p>
+              <p>
+                1412689 - Hoàng Thị Bích Vân <br>
+                Email: hoangthibichvan95@gmail.com <br>
+                Phone: 01688568780<br>
+              </p>
+            </footer>
+            <!-- /#footer -->
+
+          </div>
+        </div>
+      <!-- /#page-content-wrapper -->
+
+      <!-- jQuery -->
+      <script src="components/jquery/dist/jquery.js" charset="utf-8"></script>
+      <script src="components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+
+      <!-- Custom JavaScript -->
+      <script src="js/myjs.js" charset="utf-8"></script>
+
+  </body>
+</html>

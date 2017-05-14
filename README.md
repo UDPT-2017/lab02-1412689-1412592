@@ -3,7 +3,7 @@
 **Name of your app** là một bài tập 2 tại môn UDPT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
 
 Thành viên:
-* [ ] **MSSV1** Tên sinh viên 1 (tên tài khoản github)
+* [X] **1412689** Hoàng Thị Bích Vân (1412689)
 * [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
 
 URL: **URL hosting của bài tập**
@@ -13,17 +13,17 @@ URL: **URL hosting của bài tập**
 Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm vào chức năng theo mẫu. Mục nào ko có MSSV là tính điểm theo nhóm. Cần sắp xếp các chức năng bên dưới theo thứ tự MSSV đã thực hiện.
 
 Yêu cầu **GIT**
-* [ ] Có sử dụng GIT.
+* [x] Có sử dụng GIT.
 * [ ] Sử dụng GIT theo Centralized Workflow.
 * [ ] Sử dụng GIT theo Feature Branch Workflow.
 * [ ] Sử dụng GIT theo Gitflow Workflow.
 
 Yêu cầu **bắt buộc**
-* [ ] Website layout theo kiến trúc MVC với các thành phần được tách thành nhiều module theo hướng dẫn. (**MSSV**)
-* [ ] Trang web được thiết kế sẽ bao gồm các trang: home, messages, users, about. (**MSSV**)
-* [ ] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). (**MSSV**)
-* [ ] Cho phép người dùng đăng ký tài khoản bằng các thông tin: email, password, name, phone.(**MSSV**)
-* [ ] Đăng nhập bằng email và password.(**MSSV**)
+* [x] Website layout theo kiến trúc MVC với các thành phần được tách thành nhiều module theo hướng dẫn. (**1412689**)
+* [x] Trang web được thiết kế sẽ bao gồm các trang: home, messages, users, about. (**1412689**)
+* [x] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). (**1412689**)
+* [x] Cho phép người dùng đăng ký tài khoản bằng các thông tin: email, password, name, phone.(**1412689**)
+* [x] Đăng nhập bằng email và password.(**MSSV**)
 * [ ] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi.(**MSSV**)
 * [ ] Tin nhắn chưa đọc phải được làm nổi bật hơn các tin nhắn khác, có ghi nhận thời gian đã cách đây bao lâu.(**MSSV**)
 * [ ] Trang users cho phép xem danh sách người dùng có trong hệ thống và phải có nút "add" với những người dùng chưa là bạn để thêm vào danh sách bạn bè.(**MSSV**)
@@ -45,7 +45,7 @@ Yêu cầu **không bắt buộc**:
 * [ ] Quản lý các thay đổi trong cơ sở dữ liệu (sử dụng [db-migrate](https://www.npmjs.com/package/db-migrate))(**MSSV**)
 
 Liệt kê các **yêu cầu nâng cao** đã thực hiện:
-* [ ] Chức năng 1
+* [x] Truyền biến active cho các trang
 * [ ] Chức năng 2
 
 ## Demo

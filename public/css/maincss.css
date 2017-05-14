@@ -1,0 +1,98 @@
+html
+{
+  margin: 0px;
+}
+header
+{
+    background-color: #1B5E20;
+
+}
+
+
+.intro
+{
+
+    margin: 0px;
+    width: 100%;
+    min-width: 600px;
+    background-color: #1B5E20 /*rgb(128, 212, 255)*/;
+    background-color: #1B5E20;
+    overflow-x: hidden;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+.container-fluid .jumbotron {
+     padding-right: 1px;
+     border-radius: 0px;
+     padding-left: 0px;
+
+}
+.intro h1
+{
+    margin:0px;
+    padding: 10px;
+    /*padding-left: 100px;*/
+    color: #fff;
+}
+
+body
+{
+    /*border-left-style: solid;
+    border-left-width: medium;
+    border-left-color: rgb(0, 53, 102);*/
+
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+}
+.container{
+  background-color: #C8E6C9;
+  min-height: 378px;
+  width: 100%;
+}
+
+.content{
+    margin: 20px;
+}
+
+footer
+{
+    padding: 20px;
+    clear: both;
+    width: 100%;
+    background-color: #1B5E20;
+    text
+    position: relative;
+    /*overflow-x: hidden;*/
+}
+footer p
+{
+    color:#fff;
+}
+
+img.img-responsive {
+    margin: 0 auto 20px;
+}
+
+.intro-text{
+    text-align: center;
+}
+
+@media (min-width: 768px)
+.intro-text .name {
+    font-size: 4.75em;
+}
+
+.help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+
+.form-control{
+    width: 30px;
+    height: 30px;
+}

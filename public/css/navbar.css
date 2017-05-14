@@ -1,0 +1,87 @@
+body{
+	margin:0px;
+	padding:0px;
+	font-size:15px;
+	background:#EBEBEB;
+	font-family: "Roboto","segoe ui",Helvetica,Arial,sans-serif;
+}
+
+.navbar,
+.navbar-inverse{
+	margin-bottom:0px;
+	height:50px;
+	border:none;
+	background-color: #1B5E20;
+
+}
+.navbar-toggle {
+	border-radius:0px;
+	border: 0px;
+}
+	border-radius:0px;
+}
+	border:0px;
+}
+.navbar,
+.navbar-collapse{
+	border-radius:0px;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+	background-color: #2E7D32;
+}
+
+.navbar{
+	border-radius:0px;
+}
+
+#myNavbar{
+	z-index:9999999;
+	background-color:#1B5E20;
+	border-color:transparent;
+	position:relative;
+
+}
+.col-md-4{
+	position:inherit;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+	background-color:#2E7D32;
+}
+
+.active{
+	background-color: #2E7D32;
+}
+
+.btn-default{
+	color: #fff;
+	background-color: #1B5E20;
+	border-color: transparent;
+	height: 50px;
+}
+.btn-default:hover{
+	border-color: transparent;
+	background-color: #2E7D32;
+}
+/*footer{
+	background:#424242;
+	clear:both;
+	height:100px;
+	width:100%;
+}
+*/
+
+/*login- signup*/
+.btn-warning{
+	background-color: #1B5E20;
+	border-color: transparent;
+}
+
+.btn-warning:hover{
+	background-color: #2E7D32;
+	border-color: transparent;
+}
+
+
+.glyphicon{
+	font-family: 'Glyphicons Halflings';
+}
