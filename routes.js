@@ -21,7 +21,7 @@ module.exports = function(app, passport) {
 	  	title: '1412592-1412689', 
 	  	layout: 'application',
 	  	active: { home: true },
-	  	
+	  	user : req.user
 	  })
 	});
 
@@ -74,7 +74,7 @@ module.exports = function(app, passport) {
 	app.get('/login', function(req, res) {
 
 		// render the page and pass in any flash data if it exists
-		res.render("login", { message: req.flash('loginMessage') });
+		res.render("login", { message: req.flash('loginMessage'), title: '1412592-1412689',  });
 	});
 
 	// process the login form
@@ -102,7 +102,7 @@ module.exports = function(app, passport) {
 	// show the signup form
 	app.get('/signup', function(req, res) {
 		// render the page and pass in any flash data if it exists
-		res.render('signup', { message: req.flash('signupMessage') });
+		res.render('signup', { message: req.flash('signupMessage'),title: '1412592-1412689', });
 	});
 
 	// process the signup form

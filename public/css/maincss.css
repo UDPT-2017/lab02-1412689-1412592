@@ -96,3 +96,27 @@ img.img-responsive {
     width: 30px;
     height: 30px;
 }
+
+.fb{
+    width: 32px; 
+    height: 32px;
+    margin: 0 auto 0px;
+    list-style: none;
+    
+}
+.iconfb{
+    border-radius: 100%;
+    width: 32px; 
+    height: 32px;
+}
+.fb>li{
+    float: left;
+    text-align: -webkit-match-parent;
+}
+.intro-text{
+    text-align: center;
+}
+
+.img-thumbnail{
+    border-radius: 100%;
+}
