@@ -1,29 +1,35 @@
 // app/routes.js
-module.exports = function(app, passport) {
 
-	var express  = require('express');
-	var exphbs  = require('express-handlebars');
+
+var express  = require('express');
+var exphbs  = require('express-handlebars');
+var path = require('path');
+
+
+
+module.exports = function(app, passport, pool) {
+
+
+	var homeController = require('../app/controllers/homeController');
+	var messagesController = require('../app/controllers/messageController');
+	var loginController = require('../app/controllers/loginController');
+
 	app.use(express.static('public'));
 	app.use('/components',express.static('bower_components'));
 
 	//app.set('views', './views');
 	// Register `hbs.engine` with the Express app.
 	app.engine('hbs', exphbs({
-		extname: '.hbs'
+	  extname: '.hbs',
+		defaultLayout: 'application',
+	  layoutsDir: path.resolve('./app/views/layouts/'),
+	  partialsDir: path.resolve('./app/views/partials')
 	}));
 
 	app.set('view engine', 'hbs');
+	app.set('views', path.resolve('././app/views'));
 
-	
-
-	app.get('/', function (req, res) {
-	  res.render('index', { 
-	  	title: '1412592-1412689', 
-	  	layout: 'application',
-	  	active: { home: true },
-	  	user : req.user
-	  })
-	});
+	app.get('/', homeController.index);
 
 
 	// =====================================
@@ -35,19 +41,29 @@ module.exports = function(app, passport) {
 
 
 	//albums
-	app.get('/messages', function(req, res) {
-		res.render('messages',{
-			user: req.user,
-			title: '1412592-1412689', 
-			message: 'Your message',
-			layout: 'application',
-			active: { messages: true }
-		});
+	//app.get("/messages/:id", messagesController.index);
 
-	});
+//=======================================================================================================
+	app.get('/messages', isLoggedIn, messagesController.messages);
+
+	app.get('/api-mailbox', isLoggedIn, messagesController.apimailbox);
+
+
+	app.get('/sentbox', isLoggedIn, messagesController.sentbox);
+
+	app.get('/compose', isLoggedIn, messagesController.compose);
+
+	//app.post('/compose', isLoggedIn, messagesController.postcompose);
+
+	app.get('/read/:id', isLoggedIn, messagesController.read);
+
+
+	app.get('/readsent/:id', isLoggedIn, messagesController.readsent);
+
+
 	app.get('/users', function(req, res) {
 		res.render('users',{
-			title: '1412592-1412689', 
+			title: '1412592-1412689',
 			user: req.user,
 			message: 'Trang cá nhân của bạn',
 			layout: 'application',
@@ -55,12 +71,12 @@ module.exports = function(app, passport) {
 		});
 
 	});
-	
+
 	//albums
 	app.get('/about', function(req, res) {
 		res.render('about',{
 			user: req.user,
-			title: '1412592-1412689', 
+			title: '1412592-1412689',
 			message: 'Thông tin về chúng tôi',
 			layout: 'application',
 			active: { about: true }
@@ -71,45 +87,20 @@ module.exports = function(app, passport) {
 	// LOGIN ===============================
 	// =====================================
 	// show the login form
-	app.get('/login', function(req, res) {
-
-		// render the page and pass in any flash data if it exists
-		res.render("login", { message: req.flash('loginMessage'), title: '1412592-1412689',  });
-	});
+	app.get('/login', Logged, loginController.formLogin);
 
 	// process the login form
-	app.post('/login', passport.authenticate('local-login', {
-            successRedirect : '/', //nếu thành công thì chuyển về link nào đó.
-            failureRedirect : '/login', // ko thì nó sẽ tự reload
-            failureFlash : true // allow flash messages
-		}),
-        function(req, res) {
-            console.log("hello");
+	app.post('/login', loginController.login);
 
-            if (req.body.remember) {
-              req.session.cookie.maxAge = 1000 * 60 * 3;
-            } else {
-              req.session.cookie.expires = false;
-            }
-        res.redirect('/',{
-					user: req.user //truyền biến thông tin user vừa đăng ký về trang chủ	
-				});
-    });
 
-	// =====================================
-	// SIGNUP ==============================
-	// =====================================
-	// show the signup form
-	app.get('/signup', function(req, res) {
-		// render the page and pass in any flash data if it exists
-		res.render('signup', { message: req.flash('signupMessage'),title: '1412592-1412689', });
-	});
+	app.get('/signup', loginController.formSignup);
+
 
 	// process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/', // redirect to the secure profile section
+		successRedirect : '/messages', // redirect to the secure profile section
 		failureRedirect : '/signup', // redirect back to the signup page if there is an error
-		failureFlash : true // allow flash messages
+		failureFlash : true // allow flash emailbox
 	}));
 
 	// =====================================
@@ -126,11 +117,8 @@ module.exports = function(app, passport) {
 	// =====================================
 	// LOGOUT ==============================
 	// =====================================
-	app.get('/logout', function(req, res) {
-		req.logout();
-		res.redirect('/');
-		});
-	};
+	app.get('/logout', loginController.logout);
+};
 
 // route middleware to make sure
 	function isLoggedIn(req, res, next) {
@@ -140,5 +128,14 @@ module.exports = function(app, passport) {
 		return next();
 
 	// if they aren't redirect them to the home page
+	res.redirect('/');
+}
+function Logged(req, res, next) {
+
+	// if user isnt authenticated in the session, carry on
+	if (!req.isAuthenticated())
+		return next();
+
+	// if they are redirect them to the home page
 	res.redirect('/');
 }

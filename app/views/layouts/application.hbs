@@ -56,32 +56,20 @@
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                           <ul class="nav navbar-nav">
-                            <li class="{{#if active.home}}active{{/if}} home"><a href="/">Home</a></li>
-                            <li class="{{#if active.messages}}active{{/if}} messages"><a href="messages">Messages</a></li>
-                            <li class="{{#if active.users}}active{{/if}} users"><a href="users">Users</a></li>
-                            <li class="{{#if active.about}}active{{/if}} about"><a href="about">About</a></li>
-                            
+                            {{#if user}}
+                              <li>
+                                  <a href="messages/{{user.id}}"><i class="fa fa-inbox fa-fw"></i>{{countMailAll}} Message</a>
+                              </li>
+                            {{/if}}
+                              <li>
+                                  <a href="#"><i class="fa fa-user fa-fw"></i> User</a>
+                              </li>
+                              <li>
+                                  <a href="about"><i class="fa fa-group fa-fw"></i> About</a>
+                              </li>
                           </ul>
                               
-                          {{#if [user]}}
-                            
-                                  <ul class="nav navbar-nav navbar-right">
-                                <div class="dropdown">
-                                  <button class="btn btn-default" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> {{user.username}}</button>
-                                  <ul class="dropdown-menu">
-                                  
-                                    <li><a href="/logout">logout</a></li>
-                                  </ul>
-                                </div>
-                              </ul>
-                            
-                          {{else}}
-                                
-                            <ul class="nav navbar-nav navbar-right">
-                                  <li><a href="/signup" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Đăng Ký</a></li>
-                                  <li><a href="/login" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
-                                </ul>
-                          {{/if}}
+                         
 
                         </div>
 

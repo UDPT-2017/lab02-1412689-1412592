@@ -7,8 +7,9 @@ var LocalStrategy   = require('passport-local').Strategy;
 
 var bcrypt = require('bcrypt-nodejs');
 // load up the user model
-const pg = require('pg');
-var bcrypt = require('bcrypt-nodejs');
+var moment = require('moment');
+var momentNow = moment();
+var formatted = momentNow.format('YYYY-MM-DD HH:mm:ss');
 
 const nodemailer = require('nodemailer');
 
@@ -16,22 +17,12 @@ const nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'mayxanh2408@gmail.com',
-        pass: 'Bichvan24081995'
+        user: 'harmonicatabs2015@gmail.com',
+        pass: 'harmonicatabs17101995'
     }
 });
 
-var config = {
-  user: 'postgres', //env var: PGUSER
-  database: 'chatbox', //cái này tức là tên của database đã tạo
-  password: '24081995', //password database
-  host: 'localhost', // Server hosting the postgres database
-  port: 5432, //env var: PGPORT
-  max: 10, // max number of clients in the pool
-  idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
-};
-const pool = new pg.Pool(config);
-module.exports = function(passport) {
+module.exports = function(passport, pool) {
 
     // =========================================================================
     // passport session setup ==================================================
@@ -126,10 +117,10 @@ module.exports = function(passport) {
 
                 if (!bcrypt.compareSync(password, rows.rows[0].password))
                     return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
-                
+
 
                 let mailOptions = {
-                    from: '"My Message 👻" <mayxanh2408@gmail.com>', // sender address
+                    from: '"My Message 👻" <harmonicatabs2015@gmail.com>', // sender address
                     to: rows.rows[0].email, // list of receivers
                     subject: 'Hello ✔', // Subject line
                     text: 'Hello world ?', // plain text body

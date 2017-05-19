@@ -120,3 +120,8 @@ img.img-responsive {
 .img-thumbnail{
     border-radius: 100%;
 }
+
+.list-inline{
+    list-style-type: none;
+}
+/*--------------------------------------*/
