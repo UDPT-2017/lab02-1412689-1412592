@@ -16,7 +16,7 @@ const pool = require('../models/pg');
 
 var messagesController = {
 	message: function(req, res) {
-		pool.connect(function (err) {
+		/*pool.connect(function (err) {
 		  if (err) return console.log(err);
 			  // execute a query on our database
 			pool.query('select emailbox.id_email, title, content, read, send_time, read_time, username from emailbox,users where user_receive = '+ req.user.id +'and users.id = emailbox.user_send order by emailbox.id_email desc OFFSET 0 LIMIT 10', function (err, result) {
@@ -35,11 +35,6 @@ var messagesController = {
 					    	return console.log(err);
 					    }
 					    // disconnect the client
-					    pool.query('select * from friend, users where user_id = '+ req.user.id +' and friend_id = id', function (err, friend) {
-						    if (err) {
-						    	res.end();
-						    	return console.log(err);
-						    }
 						    // disconnect the client
 						    // console.log(result.rows);
 						    // console.log(countAll.rows);
@@ -49,21 +44,22 @@ var messagesController = {
 						    	countMailAll = countAll.rows[0].count;
 						    var countMailRe = 0;
 						    if(count.rows.length > 0)
-						    	countMailRe = count.rows[0].count;
+						    	countMailRe = count.rows[0].count;*/
 						    res.render('messages',{
-								received : result.rows,
-								friend: friend.rows,
-								countMailAll: countMailAll,
-								countMailRe: countMailRe,
-								sentEmail: req.flash('sentEmail')[0]
+								//received : result.rows,
+								//friend: friend.rows,
+								//countMailAll: countMailAll,
+								//countMailRe: countMailRe,
+								layout: 'application',
+								active: { messages: true }
+								//sentEmail: req.flash('sentEmail')[0]
 							});
-						});
-					});
+				/*	});
 				});
 			});
 
 
-		});
+		});*/
 	},
 	apimailbox: function(req, res) {
 		if (req.xhr || req.headers.accept.indexOf('json') > -1) {

@@ -119,6 +119,7 @@ img.img-responsive {
 }
 .intro-text{
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .img-thumbnail{
@@ -136,4 +137,8 @@ img.img-responsive {
   color: fff;
   text-align: center;
 
+}
+
+.col-lg-12{
+  margin-top: 20px;
 }
