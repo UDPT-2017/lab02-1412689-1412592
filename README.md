@@ -6,7 +6,7 @@ Thành viên:
 * [X] **1412689** Hoàng Thị Bích Vân (1412689)
 * [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
 
-URL: **URL hosting của bài tập**
+URL: **https://lab02-1412689-1412592.herokuapp.com**
 
 ## Yêu cầu
 
