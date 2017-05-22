@@ -13,6 +13,7 @@ module.exports = function(app, passport, pool) {
 	var homeController = require('../app/controllers/homeController');
 	var messagesController = require('../app/controllers/messageController');
 	var loginController = require('../app/controllers/loginController');
+ 	var listuserController = require('../app/controllers/listuserController');
 
 	app.use(express.static('public'));
 	app.use('/components',express.static('bower_components'));
@@ -44,7 +45,7 @@ module.exports = function(app, passport, pool) {
 	//app.get("/messages/:id", messagesController.index);
 
 //=======================================================================================================
-	app.get('/messages', isLoggedIn, messagesController.messages);
+	app.get('/messages', isLoggedIn, messagesController.message);
 
 	app.get('/api-mailbox', isLoggedIn, messagesController.apimailbox);
 
@@ -61,16 +62,8 @@ module.exports = function(app, passport, pool) {
 	app.get('/readsent/:id', isLoggedIn, messagesController.readsent);
 
 
-	app.get('/users', function(req, res) {
-		res.render('users',{
-			title: '1412592-1412689',
-			user: req.user,
-			message: 'Trang cá nhân của bạn',
-			layout: 'application',
-			active: { users: true }
-		});
+app.get('/listusers', listuserController.listusers);
 
-	});
 
 	//albums
 	app.get('/about', function(req, res) {

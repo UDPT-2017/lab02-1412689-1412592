@@ -1,5 +1,5 @@
 /*var messagesController ={
-	index: function(req, res){
+	message: function(req, res){
 		res.render('messages',{
 			user: req.user,
 			title: '1412592-1412689',
@@ -15,7 +15,7 @@ var formatted = momentNow.format('YYYY-MM-DD HH:mm:ss');
 const pool = require('../models/pg');
 
 var messagesController = {
-	messages: function(req, res) {
+	message: function(req, res) {
 		pool.connect(function (err) {
 		  if (err) return console.log(err);
 			  // execute a query on our database

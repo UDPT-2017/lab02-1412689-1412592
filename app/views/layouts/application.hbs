@@ -6,13 +6,14 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/maincss.css">
     <link rel="stylesheet" type="text/css" href="css/leftMenucss.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/content.css">
 
     <style>
   .carousel-inner > .item > img,
@@ -35,8 +36,8 @@
             <!-- header -->
             <header>
               <!-- Into bar with login & search -->
-              <div class="intro">
-                <h1 style="margin-top:auto">My message</h1>
+              <div class="intro" >
+                <a href="/"><h1 style="margin-top:auto">My message</h1></a>
               </div>
               <!-- /Into bar with login & search -->
 
@@ -50,26 +51,36 @@
                           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>                        
+                            <span class="icon-bar"></span>
                           </button>
-                          
+
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                           <ul class="nav navbar-nav">
                             {{#if user}}
                               <li>
-                                  <a href="messages/{{user.id}}"><i class="fa fa-inbox fa-fw"></i>{{countMailAll}} Message</a>
+                                  <a href="/messages"><i class="fa fa-inbox fa-fw"></i>{{countMailAll}} Message</a>
                               </li>
                             {{/if}}
                               <li>
-                                  <a href="#"><i class="fa fa-user fa-fw"></i> User</a>
+                                  <a href="/listusers"><i class="fa fa-user fa-fw"></i> User</a>
                               </li>
                               <li>
                                   <a href="about"><i class="fa fa-group fa-fw"></i> About</a>
                               </li>
                           </ul>
-                              
-                         
+                          {{#if user}}
+                          <ul class="nav navbar-nav navbar-right">
+                              <div class="dropdown">
+                                <button class="btn btn-default" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> {{ user.username }}</button>
+                                <ul class="dropdown-menu">
+                                  <li><a href="/logout">logout</a></li>
+                                </ul>
+                              </div>
+                            </ul>
+
+                          {{/if}}
+
 
                         </div>
 
@@ -82,7 +93,7 @@
             <!-- /#header -->
 
             <!-- content -->
-            
+
             <div class="container">
             <h1>{{message}}</h1>
               <div class="row">

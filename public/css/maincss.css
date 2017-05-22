@@ -28,6 +28,10 @@ header
      padding-left: 0px;
 
 }
+.intro a{
+  list-style: none;
+  text-decoration: none;
+}
 .intro h1
 {
     margin:0px;
@@ -98,15 +102,15 @@ img.img-responsive {
 }
 
 .fb{
-    width: 32px; 
+    width: 32px;
     height: 32px;
     margin: 0 auto 0px;
     list-style: none;
-    
+
 }
 .iconfb{
     border-radius: 100%;
-    width: 32px; 
+    width: 32px;
     height: 32px;
 }
 .fb>li{
@@ -119,9 +123,17 @@ img.img-responsive {
 
 .img-thumbnail{
     border-radius: 100%;
+    width: 350px;
+    height: 350px;
 }
 
 .list-inline{
     list-style-type: none;
 }
 /*--------------------------------------*/
+.text-intro {
+  display: block;
+  color: fff;
+  text-align: center;
+
+}
